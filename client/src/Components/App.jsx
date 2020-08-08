@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
+import Search from './Search.jsx';
+import News from './News.jsx';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +15,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>Hello From App</div>
+      <div>
+        <Search />
+        <News />
+      </div>
     )
   }
 }
