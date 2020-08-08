@@ -1,13 +1,13 @@
 # Project Name
 
-> Project description
+> Reverb
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/The-For-Loops/reverb-nav-module
+  - https://github.com/The-For-Loops/reverb-displayview-module
+  - https://github.com/The-For-Loops/reverb-reviews-module
+  - https://github.com/The-For-Loops/reverb-similar-items-module
 
 ## Table of Contents
 
