@@ -83,7 +83,9 @@ const seed = () => {
 
   for (let i = 0; i < instrumentsArray.length; i++) {
     let {name, category, image} = instrumentsArray[i];
-    db.query(`INSERT INTO instruments (name, category, image) VALUES ("${name}", "${category}", "${image}")`, (err) => {
+    let quantity = Math.floor(Math.random() * 500);
+    let price = Math.random() * 1000;
+    db.query(`INSERT INTO instruments (name, category, price, quantity, image) VALUES ("${name}", "${category}", ${price}, ${quantity}, "${image}")`, (err) => {
       if(err) {
         console.log('seeding failed');
       }

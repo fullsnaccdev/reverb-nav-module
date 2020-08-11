@@ -5,6 +5,8 @@ CREATE TABLE instruments (
   id INT AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
   category VARCHAR(255) NOT NULL,
+  price FLOAT (11,2) NOT NULL,
+  quantity INT NOT NULL,
   image VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
 );
