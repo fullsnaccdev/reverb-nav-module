@@ -8,14 +8,29 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searching: false
+      searching: false,
+      newsPopperOpen: false
     };
     this.searchMode = this.searchMode.bind(this);
+    this.onHover = this.onHover.bind(this);
+    this.onHoverLeave = this.onHoverLeave.bind(this);
   }
 
   searchMode(searching) {
     this.setState({
       searching: searching
+    })
+  }
+
+  onHover() {
+    this.setState({
+      popoverOpen: true,
+    })
+  }
+
+  onHoverLeave() {
+    this.setState({
+      popoverOpen: false,
     })
   }
 
@@ -36,7 +51,15 @@ class App extends React.Component {
           </div>
         </div>
         <Search searchMode={this.searchMode} searching={this.state.searching} />
-        <News />
+        <News onHover={this.onHover} onHoverLeave={this.onHoverLeave} />
+        <div className={this.state.popoverOpen ? "popover-open" : "popover"} >
+          <div>Testing this out</div>
+          <div> Here is more text </div>
+          <div> Here is more text </div>
+          <div> Here is more text </div>
+          <div> Here is more text </div>
+        </div>
+
       </div>
     )
   }

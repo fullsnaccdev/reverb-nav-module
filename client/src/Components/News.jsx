@@ -4,26 +4,13 @@ import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 
 
 class News extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      popoverOpen: false
     };
-    this.onHover = this.onHover.bind(this);
-    this.onHoverLeave = this.onHoverLeave.bind(this);
   }
 
-  onHover() {
-    this.setState({
-      popoverOpen: !this.state.popoverOpen,
-    })
-  }
 
-  onHoverLeave() {
-    this.setState({
-      popoverOpen: !this.state.popoverOpen,
-    })
-  }
 
   // onMouseEnter={this.onHover} onMouseLeave={this.onHoverLeave} overlay={popover}
 
@@ -40,20 +27,12 @@ class News extends React.Component {
           <div className="category" >More Categories</div>
         </div>
         <div className="categories" >
-          <div className="category" id="news-popover" onMouseEnter={this.onHover} onMouseLeave={this.onHoverLeave} >
-            Reverb News
-            <i class="fas fa-caret-down"></i>
+          <div className="news-popover" >
+            <div className="category" id="news-popover" onMouseEnter={() => {this.props.onHover()}} onMouseLeave={this.props.onHoverLeave} >
+              Reverb News
+              <i class="fas fa-caret-down"></i>
+            </div>
           </div>
-          <Popover
-          placement="bottom"
-          isOpen={this.state.popoverOpen}
-          target="news-popover"
-          >
-            <PopoverHeader>This is popover title</PopoverHeader>
-            <PopoverBody>
-              This is simple popover content
-            </PopoverBody>
-          </Popover>
           <div className="category" >Price Guide</div>
           <div className="category" >Reverb Gives</div>
           <div className="category" >Shops</div>
