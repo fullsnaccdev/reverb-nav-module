@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-// import arrow from '../../../public/images/arrow.png'
+// import reverb from '../images/reverb.png';
+// import reverb from "../images/2015-Reverb-Logo.jpg"
 
 // right now the entire set of instruments mounts once the page loads.
 // later on refactor so you're only querying for/returning the items that the user wants
+
 
 class Search extends React.Component {
   constructor(props) {
@@ -95,7 +97,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className="nav-searchbar" >
-        <div>Reverberate</div>
+        <img src="reverb2.png"></img>
         <div className={this.props.searching ? "overlay-message" : ""} >
           <div className="searchbar" >
             <input className="searchinput" onChange={ (e) => {this.changeHandler(e); this.props.searchMode(true)} } type="text" value={this.state.query} placeholder="Shop for used & new music gear..." />
@@ -124,8 +126,8 @@ class Search extends React.Component {
           </div>
           <div className="icon-label" >Cart</div>
         </div>
-        <div>Sign Up</div>
-        <div>Log In</div>
+        <div className="sign-up" >Sign Up</div>
+        <div className="sign-up" >Log In</div>
       </div>
     )
   }

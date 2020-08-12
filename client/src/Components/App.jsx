@@ -21,16 +21,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div  >
+      <div className="nav" >
         <div className="banner" >
           <div className={this.state.searching ? "overlay" : ""} onClick={() => {this.searchMode(false)}} ></div>
           <div className="banner-left" >
             <div className="banner-message" >
               <div className="separation" > THE BEST OF JULY 2020 </div>
-              <div> Top Sellers and Recent Releases </div>
+              <div className="message" > Top Sellers and Recent Releases </div>
             </div>
           </div>
-          <div className="banner-right" > SHOP NOW A </div>
+          <div className="banner-right" >
+            SHOP NOW
+            <i class="fas fa-arrow-right"></i>
+          </div>
         </div>
         <Search searchMode={this.searchMode} searching={this.state.searching} />
         <News />
