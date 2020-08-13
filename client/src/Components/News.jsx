@@ -30,9 +30,15 @@ class News extends React.Component {
             <div className={this.props.newsPopoverOpen ? "popover-open" : "popover"} >
               <div className="news-container" onMouseEnter={() => {this.props.onHover('newsPopoverOpen')}} >
                 <div className="news-articles" >
-                  First column
-                  <div> Here is more text </div>
-                  <div> Here is more text </div>
+                  <div className="article" >
+                    image will go here
+                    <div> Title of the Article will go here </div>
+                  </div>
+                  <div className="article" >
+                    image will go here
+                    <div> Title of the Article will go here </div>
+                  </div>
+                  <button>View All Articles</button>
                 </div>
                 <div className="news-categories" >
                   Second Column
