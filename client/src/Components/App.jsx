@@ -9,29 +9,31 @@ class App extends React.Component {
     super(props);
     this.state = {
       searching: false,
-      newsPopperOpen: false
+      newsPopoverOpen: false,
+      cartPopoverOpen: false,
     };
     this.searchMode = this.searchMode.bind(this);
     this.onHover = this.onHover.bind(this);
     this.onHoverLeave = this.onHoverLeave.bind(this);
+
   }
 
   searchMode(searching) {
     this.setState({
-      searching: searching
+      searching: searching,
     })
   }
 
-  onHover() {
+  onHover(type) {
     this.setState({
-      popoverOpen: true,
+      [type]: true,
     })
   }
 
-  onHoverLeave() {
-    this.setState({
-      popoverOpen: false,
-    })
+  onHoverLeave(type) {
+    setTimeout(() => {
+      this.setState({[type]: false});
+    }, 1000)
   }
 
   render() {
@@ -50,15 +52,8 @@ class App extends React.Component {
             <i class="fas fa-arrow-right"></i>
           </div>
         </div>
-        <Search searchMode={this.searchMode} searching={this.state.searching} />
-        <News onHover={this.onHover} onHoverLeave={this.onHoverLeave} />
-        <div className={this.state.popoverOpen ? "popover-open" : "popover"} >
-          <div>Testing this out</div>
-          <div> Here is more text </div>
-          <div> Here is more text </div>
-          <div> Here is more text </div>
-          <div> Here is more text </div>
-        </div>
+        <Search searchMode={this.searchMode} searching={this.state.searching} onHover={this.onHover} onHoverLeave={this.onHoverLeave} cartPopoverOpen={this.state.cartPopoverOpen} />
+        <News onHover={this.onHover} onHoverLeave={this.onHoverLeave} newsPopoverOpen={this.state.newsPopoverOpen} />
 
       </div>
     )

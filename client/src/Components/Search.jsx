@@ -77,7 +77,7 @@ class Search extends React.Component {
         currentSelection.push(this.state.currentSelection[i])
       }
       return (
-        <div>
+        <div className="search-results" >
           {this.state.currentSelectionCategories.map((category, index) => (
             <div key={index} >
               {category}
@@ -96,38 +96,47 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div className="nav-searchbar" >
-        <img src="reverb2.png"></img>
-        <div className={this.props.searching ? "overlay-message" : ""} >
-          <div className="searchbar" >
-            <input className="searchinput" onChange={ (e) => {this.changeHandler(e); this.props.searchMode(true)} } type="text" value={this.state.query} placeholder="Shop for used & new music gear..." />
-            <div className="search-icon" >
-              <i class="fas fa-search fa-flip-horizontal fa-2x"></i>
+      <div className="nav-searchbar-container" >
+        <div className="nav-searchbar" >
+          <img src="reverb.png"></img>
+          <div className={this.props.searching ? "overlay-message" : "searchbar-container"} >
+            <div className="searchbar" >
+              <input className="searchinput" onChange={ (e) => {this.changeHandler(e); this.props.searchMode(true)} } type="text" value={this.state.query} placeholder="Shop for used & new music gear..." />
+              <div className="search-icon" >
+                <i class="fas fa-search fa-flip-horizontal fa-2x"></i>
+              </div>
             </div>
+            {this.props.searching ? this.isSearching() : null}
           </div>
-          {this.isSearching()}
-        </div>
-        <div className="sell" >Sell</div>
-        <div className="icon-container" >
-          <div className="icon" >
-            <i class="far fa-star fa-2x" ></i>
+          <div className="user-actions" >
+            <div className="sell" >Sell</div>
+            <div className="icon-container" >
+              <div className="icon" >
+                <i class="far fa-star fa-2x" ></i>
+              </div>
+              <div className="icon-label" >Watch List</div>
+            </div>
+            <div className="icon-container" >
+              <div className="icon" >
+                <i class="fas fa-border-all fa-2x"></i>
+              </div>
+              <div className="icon-label" >My Feed</div>
+            </div>
+            <div className="icon-container" >
+              <div className="container-popover" onMouseEnter={() => {this.props.onHover('cartPopoverOpen')}} onMouseLeave={() => {this.props.onHoverLeave('cartPopoverOpen')}} >
+                <div className="icon" >
+                  <i class="fas fa-shopping-cart fa-2x"></i>
+                </div>
+                <div className="icon-label" >Cart</div>
+                <div className={this.props.cartPopoverOpen ? "popover-open" : "popover"} >
+                  Testing
+                </div>
+              </div>
+            </div>
+            <div className="sign-up" >Sign Up</div>
+            <div className="sign-up" >Log In</div>
           </div>
-          <div className="icon-label" >Watch List</div>
         </div>
-        <div className="icon-container" >
-          <div className="icon" >
-            <i class="fas fa-border-all fa-2x"></i>
-          </div>
-          <div className="icon-label" >My Feed</div>
-        </div>
-        <div className="icon-container" >
-          <div className="icon" >
-            <i class="fas fa-shopping-cart fa-2x"></i>
-          </div>
-          <div className="icon-label" >Cart</div>
-        </div>
-        <div className="sign-up" >Sign Up</div>
-        <div className="sign-up" >Log In</div>
       </div>
     )
   }

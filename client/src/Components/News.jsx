@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 
 
 class News extends React.Component {
@@ -9,10 +8,6 @@ class News extends React.Component {
     this.state = {
     };
   }
-
-
-
-  // onMouseEnter={this.onHover} onMouseLeave={this.onHoverLeave} overlay={popover}
 
   render() {
     return (
@@ -27,11 +22,30 @@ class News extends React.Component {
           <div className="category" >More Categories</div>
         </div>
         <div className="categories" >
-          <div className="news-popover" >
-            <div className="category" id="news-popover" onMouseEnter={() => {this.props.onHover()}} onMouseLeave={this.props.onHoverLeave} >
+          <div className="container-popover" >
+            <div className="category" onMouseEnter={() => {this.props.onHover('newsPopoverOpen')}} onMouseLeave={() => {this.props.onHoverLeave('newsPopoverOpen')}} >
               Reverb News
               <i class="fas fa-caret-down"></i>
             </div>
+            <div className={this.props.newsPopoverOpen ? "popover-open" : "popover"} >
+              <div className="news-container" onMouseEnter={() => {this.props.onHover('newsPopoverOpen')}} >
+                <div className="news-articles" >
+                  First column
+                  <div> Here is more text </div>
+                  <div> Here is more text </div>
+                </div>
+                <div className="news-categories" >
+                  Second Column
+                  <div> News & Reviews </div>
+                  <div> Tips & How-Tos </div>
+                  <div> Interviews </div>
+                  <div> Gear History </div>
+                  <div> Demos </div>
+                  <div> Videos </div>
+                </div>
+              </div>
+            </div>
+
           </div>
           <div className="category" >Price Guide</div>
           <div className="category" >Reverb Gives</div>
