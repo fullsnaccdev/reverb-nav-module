@@ -31,23 +31,22 @@ class News extends React.Component {
               <div className="news-container" onMouseEnter={() => {this.props.onHover('newsPopoverOpen')}} >
                 <div className="news-articles" >
                   <div className="article" >
-                    image will go here
-                    <div> Title of the Article will go here </div>
+                    <img src="thumbnail1.png"/>
+                    <div className="article-title" > Title of the Article will go here </div>
                   </div>
                   <div className="article" >
-                    image will go here
-                    <div> Title of the Article will go here </div>
+                    <img src="thumbnail2.png"/>
+                    <div className="article-title" > Title of the Article will go here </div>
                   </div>
-                  <button>View All Articles</button>
+                  <button className="button-article" >View All Articles</button>
                 </div>
                 <div className="news-categories" >
-                  Second Column
-                  <div> News & Reviews </div>
-                  <div> Tips & How-Tos </div>
-                  <div> Interviews </div>
-                  <div> Gear History </div>
-                  <div> Demos </div>
-                  <div> Videos </div>
+                  <div className="news-category" > News & Reviews </div>
+                  <div className="news-category" > Tips & How-Tos </div>
+                  <div className="news-category" > Interviews </div>
+                  <div className="news-category" > Gear History </div>
+                  <div className="news-category" > Demos </div>
+                  <div className="news-category" > Videos </div>
                 </div>
               </div>
             </div>
