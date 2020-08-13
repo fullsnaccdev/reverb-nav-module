@@ -79,14 +79,20 @@ class Search extends React.Component {
       return (
         <div className="search-results" >
           {this.state.currentSelectionCategories.map((category, index) => (
-            <div key={index} >
+            <div className="instrument-category" key={index} >
               {category}
             </div>
           ))}
+          <div style={{"padding": "0 7px"}} >
+            <div className="line" ></div>
+          </div>
           {currentSelection.map((instrument) => (
-            <div key={instrument.id} >
-              {instrument.name}
-              {instrument.quantity} available from {this.state.lowestPrice}
+            <div className="instrument" key={instrument.id} >
+              <img src="thumbnail1.png"></img>
+              <div className="instrument-details" >
+                <div className="instrument-title" >{instrument.name}</div>
+                <div className="instrument-suggestion" >{instrument.quantity} available from <span className="instrument-price" >${this.state.lowestPrice}</span></div>
+              </div>
             </div>
           ))}
         </div>
