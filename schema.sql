@@ -14,5 +14,6 @@ CREATE TABLE instruments (
 CREATE TABLE news (
   id INT AUTO_INCREMENT NOT NULL,
   title VARCHAR(255),
+  img VARCHAR(255),
   PRIMARY KEY(id)
 );

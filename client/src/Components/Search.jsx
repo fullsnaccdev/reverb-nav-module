@@ -134,8 +134,14 @@ class Search extends React.Component {
                   <i class="fas fa-shopping-cart fa-2x"></i>
                 </div>
                 <div className="icon-label" >Cart</div>
-                <div className={this.props.cartPopoverOpen ? "popover-open" : "popover"} >
-                  Testing
+                <div className={this.props.cartPopoverOpen ? "cart-open" : "popover"} >
+                  <div className="cart-item" >
+                    <img src="thumbnail2.png" ></img>
+                    <div className="item-title" >Fender Player Telecaster - 3-Color Sunburst #34858 <span style={{"margin": "3.4px 0 0"}} >$699.99</span></div>
+                  </div>
+                  <div style={{"padding": "8px"}} >
+                    <button className="cart-button" >View Cart</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -147,7 +153,5 @@ class Search extends React.Component {
     )
   }
 }
-
-// testing from new handle
 
 export default Search;
