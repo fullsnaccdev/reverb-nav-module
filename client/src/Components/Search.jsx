@@ -16,7 +16,7 @@ class Search extends React.Component {
       currentSelection: [],
       currentSelectionCategories: [],
       lowestPrice: 1000,
-      cart: [1,3],
+      cart: [1],
     };
     this.changeHandler = this.changeHandler.bind(this);
     this.filterSearch = this.filterSearch.bind(this);
