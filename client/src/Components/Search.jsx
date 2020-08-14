@@ -134,7 +134,7 @@ class Search extends React.Component {
                   <i class="fas fa-shopping-cart fa-2x"></i>
                 </div>
                 <div className="icon-label" >Cart</div>
-                <div className={this.props.cartPopoverOpen ? "cart-open" : "popover"} >
+                <div className={this.props.cartPopoverOpen || this.props.cartPopoverDiv ? "cart-open" : "popover"} onMouseEnter={() => {this.props.onHover('cartPopoverDiv')}} onMouseLeave={() => {this.props.onHoverLeave('cartPopoverDiv')}} >
                   <div className="cart-item" >
                     <img src="thumbnail2.png" ></img>
                     <div className="item-title" >Fender Player Telecaster - 3-Color Sunburst #34858 <span style={{"margin": "3.4px 0 0"}} >$699.99</span></div>

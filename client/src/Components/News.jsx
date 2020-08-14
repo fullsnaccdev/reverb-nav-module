@@ -27,8 +27,8 @@ class News extends React.Component {
               Reverb News
               <i class="fas fa-caret-down"></i>
             </div>
-            <div className={this.props.newsPopoverOpen ? "popover-open" : "popover"} >
-              <div className="news-container" onMouseEnter={() => {this.props.onHover('newsPopoverOpen')}} >
+            <div className={this.props.newsPopoverOpen || this.props.newsPopoverDiv ? "popover-open" : "popover"} >
+              <div className="news-container" onMouseEnter={() => {this.props.onHover('newsPopoverDiv')}} onMouseLeave={() => {this.props.onHoverLeave('newsPopoverDiv')}} >
                 <div className="news-articles" >
                   <div className="article" >
                     <img src="thumbnail1.png"/>

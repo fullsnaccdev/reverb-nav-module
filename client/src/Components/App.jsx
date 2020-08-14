@@ -10,7 +10,9 @@ class App extends React.Component {
     this.state = {
       searching: false,
       newsPopoverOpen: false,
+      newsPopoverDiv: false,
       cartPopoverOpen: false,
+      cartPopoverDiv: false,
     };
     this.searchMode = this.searchMode.bind(this);
     this.onHover = this.onHover.bind(this);
@@ -52,8 +54,8 @@ class App extends React.Component {
             <i class="fas fa-arrow-right"></i>
           </div>
         </div>
-        <Search searchMode={this.searchMode} searching={this.state.searching} onHover={this.onHover} onHoverLeave={this.onHoverLeave} cartPopoverOpen={this.state.cartPopoverOpen} />
-        <News onHover={this.onHover} onHoverLeave={this.onHoverLeave} newsPopoverOpen={this.state.newsPopoverOpen} />
+        <Search searchMode={this.searchMode} searching={this.state.searching} onHover={this.onHover} onHoverLeave={this.onHoverLeave} cartPopoverOpen={this.state.cartPopoverOpen} cartPopoverDiv={this.state.cartPopoverDiv} />
+        <News onHover={this.onHover} onHoverLeave={this.onHoverLeave} newsPopoverOpen={this.state.newsPopoverOpen} newsPopoverDiv={this.state.newsPopoverDiv} />
 
       </div>
     )
