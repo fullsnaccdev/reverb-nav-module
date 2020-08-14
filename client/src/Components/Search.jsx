@@ -104,11 +104,11 @@ class Search extends React.Component {
     return (
       <div className="nav-searchbar-container" >
         <div className="nav-searchbar" >
-          <img style={{"padding-right": "2rem"}} src="reverb.png"></img>
+          <img style={{"padding-right": "2rem", "cursor": "pointer"}} src="reverb.png"></img>
           <div className={this.props.searching ? "overlay-message" : "searchbar-container"} >
             <div className="searchbar" >
               <input className="searchinput" onChange={ (e) => {this.changeHandler(e); this.props.searchMode(true)} } type="text" value={this.state.query} placeholder="Shop for used & new music gear..." />
-              <div className="search-icon" >
+              <div className="search-icon" style={{"cursor": "pointer"}} >
                 <i class="fas fa-search fa-flip-horizontal fa-2x"></i>
               </div>
             </div>
