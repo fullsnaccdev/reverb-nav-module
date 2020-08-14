@@ -29,7 +29,7 @@ const guitarRandomizer = () => {
     let instrument = {};
     instrument.name = adj[Math.floor(Math.random() * adj.length)] + " " + guitarBrands[Math.floor(Math.random() * guitarBrands.length)] + " " + guitar[Math.floor(Math.random() * guitar.length)];
     instrument.category = guitarCategory[Math.floor(Math.random() * guitarCategory.length)];
-    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/guitar/guitar${Math.floor(Math.random() * 10)}.jpg`;
+    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/guitar/guitar${Math.floor(Math.random() * (10 - 1)) + 1}.jpg`;
     instrumentsArray.push(instrument);
   }
 };
@@ -39,7 +39,7 @@ const drumsRandomizer = () => {
     let instrument = {};
     instrument.name = adj[Math.floor(Math.random() * adj.length)] + " " + drumsBrands[Math.floor(Math.random() * drumsBrands.length)] + " " + drums[Math.floor(Math.random() * drums.length)];
     instrument.category = drumsCategory[Math.floor(Math.random() * drumsCategory.length)];
-    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/Drums/drums${Math.floor(Math.random() * 10)}.jpg`;
+    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/Drums/drums${Math.floor(Math.random() * (10 - 1)) + 1}.jpg`;
     instrumentsArray.push(instrument);
   }
 };
@@ -49,7 +49,7 @@ const micsRandomizer = () => {
     let instrument = {};
     instrument.name = adj[Math.floor(Math.random() * adj.length)] + " " + micsBrands[Math.floor(Math.random() * micsBrands.length)] + " " + mics[Math.floor(Math.random() * mics.length)];
     instrument.category = micsCategory[Math.floor(Math.random() * micsCategory.length)];
-    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/recording+gear+images/mic${Math.floor(Math.random() * 10)}.jpg`;
+    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/recording+gear+images/mic${Math.floor(Math.random() * (10 - 1)) + 1}.jpg`;
     instrumentsArray.push(instrument);
   }
 };
@@ -59,7 +59,7 @@ const otherRandomizer = () => {
     let instrument = {};
     instrument.name = adj[Math.floor(Math.random() * adj.length)] + " " + otherBrands[Math.floor(Math.random() * otherBrands.length)] + " " + other[Math.floor(Math.random() * other.length)];
     instrument.category = otherCategory[Math.floor(Math.random() * otherCategory.length)];
-    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/amps/amps${Math.floor(Math.random() * 10)}.jpg`;
+    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/amps/amps${Math.floor(Math.random() * (10 - 1)) + 1}.jpg`;
     instrumentsArray.push(instrument);
   }
 };
@@ -69,7 +69,7 @@ const keyboardRandomizer = () => {
     let instrument = {};
     instrument.name = adj[Math.floor(Math.random() * adj.length)] + " " + keyboardBrands[Math.floor(Math.random() * keyboardBrands.length)] + " " + keyboard[Math.floor(Math.random() * keyboard.length)];
     instrument.category = keyboardCategory[Math.floor(Math.random() * keyboardCategory.length)];
-    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/pianos/piano${Math.floor(Math.random() * 10)}.jpg`;
+    instrument.image = `https://reverbimages.s3-us-west-1.amazonaws.com/pianos/piano${Math.floor(Math.random() * (10 - 1)) + 1}.jpg`;
     instrumentsArray.push(instrument);
   }
 };

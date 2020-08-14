@@ -10,7 +10,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
-    "seed": "node server/db/mysqlseed.js"
+    "seed": "node server/db/seed.js"
   },
   "dependencies": {
     "axios": "^0.19.2",

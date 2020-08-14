@@ -89,10 +89,10 @@ class Search extends React.Component {
           </div>
           {currentSelection.map((instrument) => (
             <div className="instrument" key={instrument.id} >
-              <img src="thumbnail1.png"></img>
+              <img className="img-thumbnail" src={instrument.image}></img>
               <div className="instrument-details" >
                 <div className="instrument-title" >{instrument.name}</div>
-                <div className="instrument-suggestion" >{instrument.quantity} available from <span className="instrument-price" >${this.state.lowestPrice}</span></div>
+                <div className="instrument-suggestion" >{instrument.quantity} available from <span className="instrument-price" >${instrument.price}</span></div>
               </div>
             </div>
           ))}
