@@ -6,7 +6,38 @@ class News extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      news: [],
     };
+  }
+
+  componentDidMount() {
+    this.getNews();
+  }
+
+  getNews() {
+    axios.get('/api/getAllNews')
+      .then((results) => {
+        this.setState({
+          news: results.data
+        })
+      })
+      .catch(err => console.error(err))
+  }
+
+  listNews() {
+    return (
+      this.state.news.length === 0 ? null :
+      <>
+        <div className="article" >
+          <img className="img-thumbnail" src={this.state.news[this.state.news.length - 2].img}/>
+          <div className="article-title" > {this.state.news[this.state.news.length - 2].title} </div>
+        </div>
+        <div className="article" >
+          <img className="img-thumbnail" src={this.state.news[this.state.news.length - 1].img}/>
+          <div className="article-title" > {this.state.news[this.state.news.length - 1].title} </div>
+        </div>
+      </>
+    )
   }
 
   render() {
@@ -30,14 +61,7 @@ class News extends React.Component {
             <div className={this.props.newsPopoverOpen || this.props.newsPopoverDiv ? "popover-open" : "popover"} >
               <div className="news-container" onMouseEnter={() => {this.props.onHover('newsPopoverDiv')}} onMouseLeave={() => {this.props.onHoverLeave('newsPopoverDiv')}} >
                 <div className="news-articles" >
-                  <div className="article" >
-                    <img src="thumbnail1.png"/>
-                    <div className="article-title" > Title of the Article will go here </div>
-                  </div>
-                  <div className="article" >
-                    <img src="thumbnail2.png"/>
-                    <div className="article-title" > Title of the Article will go here </div>
-                  </div>
+                  {this.listNews()}
                   <button className="button-article" >View All Articles</button>
                 </div>
                 <div className="news-categories" >

@@ -74,7 +74,7 @@ const keyboardRandomizer = () => {
   }
 };
 
-const seed = () => {
+const seedInstruments = () => {
   guitarRandomizer();
   drumsRandomizer();
   micsRandomizer();
@@ -87,11 +87,32 @@ const seed = () => {
     let price = Math.random() * 1000;
     db.query(`INSERT INTO instruments (name, category, price, quantity, image) VALUES ("${name}", "${category}", ${price}, ${quantity}, "${image}")`, (err) => {
       if(err) {
-        console.log('seeding failed');
+        console.log('instrument seeding failed');
       }
     });
   }
 }
 
-seed();
+seedInstruments();
+
+const type = ["Interview", "Video", "Show Us Your Space", "Gallery"];
+const noun1 = ["secret", "guide", "themes", ];
+const noun2 = ["react", "guitars", "bangers"];
+const adjective = ["amazing", "best"];
+const prep = ["behind", "on", "with", "to"];
+
+const seedNews = () => {
+  for (let i = 0; i < 5; i++) {
+    const title = `${type[Math.floor(Math.random() * type.length)]}: The ${adjective[Math.floor(Math.random() * adjective.length)]} ${noun1[Math.floor(Math.random() * noun1.length)]} ${prep[Math.floor(Math.random() * prep.length)]} ${noun2[Math.floor(Math.random() * noun2.length)]}`;
+    const img = `https://reverbimages.s3-us-west-1.amazonaws.com/news/news${Math.floor(Math.random() * (4 - 1)) + 1}.jpg`;
+    db.query(`INSERT INTO news (title, img) VALUES ("${title}", "${img}")`, (err) => {
+      if(err) {
+        console.log('news seeding failed');
+      }
+    })
+  }
+}
+
+seedNews();
+
 db.end();
