@@ -15,7 +15,8 @@ class Search extends React.Component {
       instruments: [],
       currentSelection: [],
       currentSelectionCategories: [],
-      lowestPrice: 1000
+      lowestPrice: 1000,
+      cart: [1,3],
     };
     this.changeHandler = this.changeHandler.bind(this);
     this.filterSearch = this.filterSearch.bind(this);
@@ -131,7 +132,9 @@ class Search extends React.Component {
             <div className="icon-container" >
               <div className="container-popover" onMouseEnter={() => {this.props.onHover('cartPopoverOpen')}} onMouseLeave={() => {this.props.onHoverLeave('cartPopoverOpen')}} >
                 <div className="icon" >
-                  <i class="fas fa-shopping-cart fa-2x"></i>
+                  <i class="fas fa-shopping-cart fa-2x">
+                    <span className={this.state.cart.length > 0 ? "notifs" : "none"} >{this.state.cart.length}</span>
+                  </i>
                 </div>
                 <div className="icon-label" >Cart</div>
                 <div className={this.props.cartPopoverOpen || this.props.cartPopoverDiv ? "cart-open" : "popover"} onMouseEnter={() => {this.props.onHover('cartPopoverDiv')}} onMouseLeave={() => {this.props.onHoverLeave('cartPopoverDiv')}} >
