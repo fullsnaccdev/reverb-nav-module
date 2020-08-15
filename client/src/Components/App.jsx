@@ -4,6 +4,8 @@ import axios from 'axios';
 import Search from './Search.jsx';
 import News from './News.jsx';
 
+// feel free to review any component that you would like!
+
 class App extends React.Component {
   constructor(props) {
     super(props);

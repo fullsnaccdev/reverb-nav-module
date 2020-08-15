@@ -5,6 +5,8 @@ import axios from 'axios';
 // later on refactor so you're only querying for/returning the items that the user wants
 
 
+
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -138,7 +140,7 @@ class Search extends React.Component {
                 <div className={this.props.cartPopoverOpen || this.props.cartPopoverDiv ? "cart-open" : "popover"} onMouseEnter={() => {this.props.onHover('cartPopoverDiv')}} onMouseLeave={() => {this.props.onHoverLeave('cartPopoverDiv')}} >
                   <div className="cart-item" >
                     <img className="img-thumbnail-cart" src="drums7.jpg" ></img>
-                    <div className="item-title" >Fender Player Telecaster - 3-Color Sunburst #34858 <span style={{"margin": "3.4px 0 0"}} >$699.99</span></div>
+                    <div className="item-title" >Fender Player Telecaster - 3-Color Sunburst #348586 <span style={{"margin": "3.4px 0 0"}} >$699.99</span></div>
                   </div>
                   <div style={{"padding": "8px"}} >
                     <button className="cart-button" >View Cart</button>
