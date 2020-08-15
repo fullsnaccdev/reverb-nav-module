@@ -54,8 +54,12 @@ class App extends React.Component {
             <i class="fas fa-arrow-right"></i>
           </div>
         </div>
-        <Search searchMode={this.searchMode} searching={this.state.searching} onHover={this.onHover} onHoverLeave={this.onHoverLeave} cartPopoverOpen={this.state.cartPopoverOpen} cartPopoverDiv={this.state.cartPopoverDiv} />
-        <News onHover={this.onHover} onHoverLeave={this.onHoverLeave} newsPopoverOpen={this.state.newsPopoverOpen} newsPopoverDiv={this.state.newsPopoverDiv} />
+        <div style={{"display": "flex", "justify-content": "center"}} >
+          <Search searchMode={this.searchMode} searching={this.state.searching} onHover={this.onHover} onHoverLeave={this.onHoverLeave} cartPopoverOpen={this.state.cartPopoverOpen} cartPopoverDiv={this.state.cartPopoverDiv} />
+        </div>
+        <div style={{"display": "flex", "justify-content": "center"}} >
+          <News onHover={this.onHover} onHoverLeave={this.onHoverLeave} newsPopoverOpen={this.state.newsPopoverOpen} newsPopoverDiv={this.state.newsPopoverDiv} />
+        </div>
 
       </div>
     )

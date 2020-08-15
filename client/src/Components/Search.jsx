@@ -1,7 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-// import reverb from '../images/reverb.png';
-// import reverb from "../images/2015-Reverb-Logo.jpg"
 
 // right now the entire set of instruments mounts once the page loads.
 // later on refactor so you're only querying for/returning the items that the user wants
@@ -108,7 +106,7 @@ class Search extends React.Component {
           <img style={{"padding-right": "2rem", "cursor": "pointer"}} src="reverb.png"></img>
           <div className={this.props.searching ? "overlay-message" : "searchbar-container"} >
             <div className="searchbar" >
-              <input className="searchinput" onChange={ (e) => {this.changeHandler(e); this.props.searchMode(true)} } type="text" value={this.state.query} placeholder="Shop for used & new music gear..." />
+              <input className="searchinput" onChange={(e) => {this.changeHandler(e); this.props.searchMode(true)}} type="text" value={this.state.query} placeholder="Shop for used & new music gear..." />
               <div className="search-icon" style={{"cursor": "pointer"}} >
                 <i class="fas fa-search fa-flip-horizontal fa-2x"></i>
               </div>
@@ -139,7 +137,7 @@ class Search extends React.Component {
                 <div className="icon-label" >Cart</div>
                 <div className={this.props.cartPopoverOpen || this.props.cartPopoverDiv ? "cart-open" : "popover"} onMouseEnter={() => {this.props.onHover('cartPopoverDiv')}} onMouseLeave={() => {this.props.onHoverLeave('cartPopoverDiv')}} >
                   <div className="cart-item" >
-                    <img src="thumbnail2.png" ></img>
+                    <img className="img-thumbnail-cart" src="drums7.jpg" ></img>
                     <div className="item-title" >Fender Player Telecaster - 3-Color Sunburst #34858 <span style={{"margin": "3.4px 0 0"}} >$699.99</span></div>
                   </div>
                   <div style={{"padding": "8px"}} >
