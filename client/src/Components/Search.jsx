@@ -55,7 +55,7 @@ class Search extends React.Component {
         currentSelection: instrumentContainer,
         currentSelectionCategories: categoryContainer,
         lowestPrice: lowestPrice
-      }, () => console.log(this.state))
+      }, () => this.isSearching())
     } else {
       <div></div>
     }
@@ -75,7 +75,9 @@ class Search extends React.Component {
     if (this.state.currentSelection.length > 0 && this.state.query.length > 1) {
       let currentSelection = [];
       for (let i = 0; i < 4; i++) {
-        currentSelection.push(this.state.currentSelection[i])
+        if(this.state.currentSelection[i] !== undefined) {
+          currentSelection.push(this.state.currentSelection[i])
+        }
       }
       return (
         <div className="search-results" >
