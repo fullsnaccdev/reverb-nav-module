@@ -43,17 +43,19 @@ class App extends React.Component {
   render() {
     return (
       <div className="nav" >
-        <div className="banner" >
-          <div className={this.state.searching ? "overlay" : ""} onClick={() => {this.searchMode(false)}} ></div>
-          <div className="banner-left" >
-            <div className="banner-message" >
-              <div className="separation" > THE BEST OF JULY 2020 </div>
-              <div className="message" > Top Sellers and Recent Releases </div>
+        <div className="banner-container" >
+          <div className="banner" >
+            <div className={this.state.searching ? "overlay" : ""} onClick={() => {this.searchMode(false)}} ></div>
+            <div className="banner-left" >
+              <div className="banner-message" >
+                <div className="separation" > THE BEST OF JULY 2020 </div>
+                <div className="message" > Top Sellers and Recent Releases </div>
+              </div>
             </div>
-          </div>
-          <div className="banner-right" >
-            SHOP NOW
-            <i class="fas fa-arrow-right"></i>
+            <div className="banner-right" >
+              SHOP NOW
+              <i class="fas fa-arrow-right"></i>
+            </div>
           </div>
         </div>
         <div style={{"display": "flex", "justify-content": "center"}} >

@@ -1,11 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 
-// right now the entire set of instruments mounts once the page loads.
-// later on refactor so you're only querying for/returning the items that the user wants
-
-
-
 
 class Search extends React.Component {
   constructor(props) {
@@ -15,65 +10,34 @@ class Search extends React.Component {
       instruments: [],
       currentSelection: [],
       currentSelectionCategories: [],
-      lowestPrice: 1000,
       cart: [1],
     };
     this.changeHandler = this.changeHandler.bind(this);
-    this.filterSearch = this.filterSearch.bind(this);
-  }
-
-  componentDidMount() {
-    this.getInstruments();
   }
 
   changeHandler(e) {
     this.setState({
       query: e.target.value
     },() => {
-      this.filterSearch()})
-  }
-
-  filterSearch() {
-    if (this.state.query.length > 1) {
-      let instrumentContainer = [];
-      let categoryContainer = {};
-      let lowestPrice = 1000;
-      this.state.instruments.forEach((instrument) => {
-        let words = instrument.name.toLowerCase();
-        if(words.includes(this.state.query.toLowerCase())) {
-          instrumentContainer.push(instrument);
-          if (categoryContainer[instrument.category] === undefined) {
-            categoryContainer[instrument.category] = 1;
-          }
-          if (instrument.price < lowestPrice) {
-            lowestPrice = instrument.price;
-          }
-        }
-      })
-      categoryContainer = Object.keys(categoryContainer);
-      this.setState({
-        currentSelection: instrumentContainer,
-        currentSelectionCategories: categoryContainer,
-        lowestPrice: lowestPrice
-      }, () => this.isSearching())
-    } else {
-      <div></div>
-    }
+      this.getInstruments()})
   }
 
   getInstruments() {
-    axios.get('/api/getAllInstruments')
+    axios.get(`/api/getInstruments/${this.state.query}`)
       .then((results) => {
         this.setState({
-          instruments: results.data
+          currentSelection: results.data.instruments,
+          currentSelectionCategories: results.data.categories
         })
       })
       .catch(err => console.error(err))
   }
 
+
   isSearching() {
     if (this.state.currentSelection.length > 0 && this.state.query.length > 1) {
       let currentSelection = [];
+      // using this loop to limit the search results to only 4 items at a time
       for (let i = 0; i < 4; i++) {
         if(this.state.currentSelection[i] !== undefined) {
           currentSelection.push(this.state.currentSelection[i])
