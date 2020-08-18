@@ -10,7 +10,6 @@ class Search extends React.Component {
       instruments: [],
       currentSelection: [],
       currentSelectionCategories: [],
-      lowestPrice: 1000,
       cart: [1],
     };
     this.changeHandler = this.changeHandler.bind(this);
@@ -29,7 +28,7 @@ class Search extends React.Component {
         this.setState({
           currentSelection: results.data.instruments,
           currentSelectionCategories: results.data.categories
-        }, () => this.isSearching())
+        })
       })
       .catch(err => console.error(err))
   }
