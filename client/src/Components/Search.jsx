@@ -37,6 +37,7 @@ class Search extends React.Component {
   isSearching() {
     if (this.state.currentSelection.length > 0 && this.state.query.length > 1) {
       let currentSelection = [];
+      // using this loop to limit the search results to only 4 items at a time
       for (let i = 0; i < 4; i++) {
         if(this.state.currentSelection[i] !== undefined) {
           currentSelection.push(this.state.currentSelection[i])
