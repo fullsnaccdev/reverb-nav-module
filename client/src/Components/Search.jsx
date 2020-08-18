@@ -10,9 +10,10 @@ class Search extends React.Component {
       instruments: [],
       currentSelection: [],
       currentSelectionCategories: [],
-      cart: [1],
+      cart: [],
     };
     this.changeHandler = this.changeHandler.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   changeHandler(e) {
@@ -33,6 +34,15 @@ class Search extends React.Component {
       .catch(err => console.error(err))
   }
 
+  addToCart(instrument) {
+    this.setState({
+      cart: [...this.state.cart, instrument]
+    }, () => console.log(this.state))
+  }
+
+  updateCart() {
+
+  }
 
   isSearching() {
     if (this.state.currentSelection.length > 0 && this.state.query.length > 1) {
@@ -54,7 +64,7 @@ class Search extends React.Component {
             <div className="line" ></div>
           </div>
           {currentSelection.map((instrument) => (
-            <div className="instrument" key={instrument.id} >
+            <div className="instrument" key={instrument.id} onClick={() => {this.addToCart(instrument)}} >
               <img className="img-thumbnail" src={instrument.image}></img>
               <div className="instrument-details" >
                 <div className="instrument-title" >{instrument.name}</div>
@@ -104,10 +114,12 @@ class Search extends React.Component {
                 </div>
                 <div className="icon-label" >Cart</div>
                 <div className={this.props.cartPopoverOpen || this.props.cartPopoverDiv ? "cart-open" : "popover"} onMouseEnter={() => {this.props.onHover('cartPopoverDiv')}} onMouseLeave={() => {this.props.onHoverLeave('cartPopoverDiv')}} >
-                  <div className="cart-item" >
-                    <img className="img-thumbnail-cart" src="drums7.jpg" ></img>
-                    <div className="item-title" >Fender Player Telecaster - 3-Color Sunburst #348586 <span style={{"margin": "3.4px 0 0"}} >$699.99</span></div>
-                  </div>
+                  {this.state.cart.length > 0 ? this.state.cart.map((instrument) => (
+                    <div className="cart-item" >
+                      <img className="img-thumbnail-cart" src={instrument.image} ></img>
+                      <div className="item-title" >{instrument.name} <span style={{"margin": "3.4px 0 0"}} >${instrument.price}</span></div>
+                    </div>
+                  )) : null }
                   <div style={{"padding": "8px"}} >
                     <button className="cart-button" >View Cart</button>
                   </div>

@@ -452,6 +452,8 @@ textarea:focus, input:focus{
   font-size: 13.6px;
   padding: 0 0 0 10px;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
 }
 
 .cart-button {
