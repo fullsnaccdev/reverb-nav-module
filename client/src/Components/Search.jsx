@@ -37,11 +37,7 @@ class Search extends React.Component {
   addToCart(instrument) {
     this.setState({
       cart: [...this.state.cart, instrument]
-    }, () => console.log(this.state))
-  }
-
-  updateCart() {
-
+    })
   }
 
   isSearching() {
