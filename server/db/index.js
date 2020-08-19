@@ -4,7 +4,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'jameskim',
-  database: 'reverb'
+  database: 'reverbnav'
 });
 
 // uncomment after loading schema and seeding

@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS reverb;
-CREATE DATABASE reverb;
-USE reverb;
+DROP DATABASE IF EXISTS reverbnav;
+CREATE DATABASE reverbnav;
+USE reverbnav;
 CREATE TABLE instruments (
   id INT AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
