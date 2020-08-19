@@ -15,3 +15,14 @@ describe('App', () => {
     expect(foo).toBe(false);
   })
 })
+
+describe('<CommentAdd /> interactions', () => {
+
+  it('should change the state commentText and currentlength when the onChange function of the TextField is invoked', () => {
+      wrapper.find(TextField).simulate('change',
+          { target: { value: 'New Comment' } }
+      );
+      expect(wrapper.state('commentText')).toEqual('New Comment');
+      expect(wrapper.state('currentLength')).toEqual('New Comment'.length);
+  });
+});
