@@ -15,7 +15,7 @@ class News extends React.Component {
   }
 
   getNews() {
-    axios.get('/api/getAllNews')
+    axios.get('/api/nav/getAllNews')
       .then((results) => {
         this.setState({
           news: results.data

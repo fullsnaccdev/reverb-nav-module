@@ -24,7 +24,7 @@ class Search extends React.Component {
   }
 
   getInstruments() {
-    axios.get(`/api/getInstruments/${this.state.query}`)
+    axios.get(`/api/nav/getInstruments/${this.state.query}`)
       .then((results) => {
         this.setState({
           currentSelection: results.data.instruments,
