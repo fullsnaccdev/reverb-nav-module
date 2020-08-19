@@ -8,6 +8,6 @@ const db = mysql.createConnection({
 });
 
 // uncomment after loading schema and seeding
-// db.connect();
+db.connect();
 
 module.exports = db;
