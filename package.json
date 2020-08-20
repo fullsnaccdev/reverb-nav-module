@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "FEC-Reverb",
   "version": "",
-  "description": "",
-  "author": "",
+  "description": "Nav-module-reverb",
+  "author": "fullsnaccdev",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
