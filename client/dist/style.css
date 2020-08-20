@@ -530,6 +530,7 @@ textarea:focus, input:focus{
   transition: opacity .1s,transform .2s;
   transition: opacity .1s,transform .2s,-webkit-transform .2s;
   width: 22rem;
+  background-color: white;
 }
 
 .popover-open:before {
